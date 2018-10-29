@@ -3,15 +3,32 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "react": "^16.6.0",
-    "react-dom": "^16.6.0",
-    "react-scripts": "2.0.5"
+    "react": "16.4.2",
+    "react-dom": "16.4.2",
+    "react-scripts": "2.0.5",
+    "react-art": "16.4.2",
+    "react-primitives": "0.6.0",
+    "react-sketchapp": "2.0.0",
+    "react-test-renderer": "16.4.2",
+    "styled-components": "^4.0.0"
+  },
+  "devDependencies": {
+    "@skpm/builder": "^0.5.11"
+  },
+  "skpm": {
+    "main": "react-sketch-mz.sketchplugin",
+    "manifest": "src/manifest.json"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "sketch-build": "skpm-build",
+    "watch": "skpm-build --watch",
+    "render": "skpm-build --watch --run",
+    "render:once": "skpm-build --run",
+    "postinstall": "npm run build && skpm-link"
   },
   "eslintConfig": {
     "extends": "react-app"
